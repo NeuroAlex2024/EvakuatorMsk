@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эвакуатор Москва - Быстро и Надежно | +7 (977) 295-71-71</title>
+    <meta name="description" content="Эвакуатор в Москве за 30 минут. Фиксированная цена от 2000₽. Страховка до 5 млн ₽. 24/7 без выходных. ☎ +7 (977) 295-71-71">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="sticky-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h2>🚛 ЭвакуаторПро</h2>
+                </div>
+                <div class="header-contact">
+                    <a href="tel:+79772957171" class="phone-btn">
+                        <i class="fas fa-phone"></i>
+                        +7 (977) 295-71-71
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Эвакуатор за <span class="highlight">30 минут</span><br>в Москве и МО</h1>
+                    <p class="hero-subtitle">Фиксированная цена от 2000₽ • Страховка до 5 млн ₽ • 24/7 без выходных</p>
+                    
+                    <div class="cta-buttons">
+                        <a href="tel:+79772957171" class="btn btn-primary">
+                            <i class="fas fa-phone"></i>
+                            ВЫЗВАТЬ СЕЙЧАС
+                        </a>
+                        <button class="btn btn-secondary" onclick="openCallbackModal()">
+                            <i class="fas fa-callback"></i>
+                            ПЕРЕЗВОНИТЬ МНЕ
+                        </button>
+                    </div>
+
+                    <div class="hero-features">
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>Прибытие за 30 мин</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Страховка 5 млн ₽</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-ruble-sign"></i>
+                            <span>Без скрытых доплат</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <div class="truck-animation">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Steps -->
+    <section class="process">
+        <div class="container">
+            <h2>3 шага и вы в пути</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-phone-alt"></i>
+                        <span class="step-number">1</span>
+                    </div>
+                    <h3>Звонок</h3>
+                    <p>Позвоните или оставьте заявку на сайте</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span class="step-number">2</span>
+                    </div>
+                    <h3>Подача</h3>
+                    <p>Эвакуатор прибудет в течение 30 минут</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-home"></i>
+                        <span class="step-number">3</span>
+                    </div>
+                    <h3>Доставка</h3>
+                    <p>Довезем в сервис или к дому</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator -->
+    <section class="calculator">
+        <div class="container">
+            <h2>Рассчитайте стоимость эвакуации</h2>
+            <div class="calculator-form">
+                <div class="form-group">
+                    <label>Тип транспорта</label>
+                    <select id="vehicleType">
+                        <option value="2000">Легковой автомобиль - 2000₽</option>
+                        <option value="2500">Кроссовер/SUV - 2500₽</option>
+                        <option value="3000">Микроавтобус - 3000₽</option>
+                        <option value="2000">Мотоцикл - 2000₽</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Расстояние</label>
+                    <input type="range" id="distance" min="1" max="100" value="10" oninput="calculatePrice()">
+                    <span id="distanceValue">10 км</span>
+                </div>
+                <div class="price-result">
+                    <div class="price-breakdown">
+                        <div>Подача: <span id="basePrice">2000₽</span></div>
+                        <div>Километры: <span id="kmPrice">500₽</span></div>
+                        <div class="total">Итого: <span id="totalPrice">2500₽</span></div>
+                    </div>
+                    <button class="btn btn-primary" onclick="openCallbackModal()">
+                        ЗАКАЗАТЬ ПО ЭТОЙ ЦЕНЕ
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages -->
+    <section class="advantages">
+        <div class="container">
+            <h2>Почему выбирают нас</h2>
+            <div class="advantages-grid">
+                <div class="advantage">
+                    <div class="advantage-icon">
+                        <i class="fas fa-stopwatch"></i>
+                    </div>
+                    <h3>30 мин прибытие</h3>
+                    <p>Гарантируем прибытие в течение 30 минут или скидка 30%</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>4000+ довольных клиентов</h3>
+                    <p>За 2023-2024 год успешно выполнили более 4000 эвакуаций</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">
+                        <i class="fas fa-truck-pickup"></i>
+                    </div>
+                    <h3>35 эвакуаторов</h3>
+                    <p>Собственный парк современных эвакуаторов Euro-5</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 call-центр</h3>
+                    <p>Круглосуточная поддержка без праздников и выходных</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-check"></i>
+                    </div>
+                    <h3>Страховка 5 млн ₽</h3>
+                    <p>Полная страховка вашего автомобиля при транспортировке</p>
+                </div>
+                <div class="advantage">
+                    <div class="advantage-icon">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <h3>Любой способ оплаты</h3>
+                    <p>Наличные, карта, переводом + фискальный чек</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="reviews">
+        <div class="container">
+            <h2>Отзывы наших клиентов</h2>
+            <div class="reviews-slider">
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">А</div>
+                        <div class="review-info">
+                            <h4>Алексей М.</h4>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"Заглохла машина на МКАД в час пик. Приехали ровно через 25 минут, как и обещали. Водитель очень аккуратно погрузил авто, довез до сервиса. Цена как договаривались - никаких доплат."</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">М</div>
+                        <div class="review-info">
+                            <h4>Мария К.</h4>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"Ночью попала в ДТП на Ленинградке. Вызвала эвакуатор в 2 часа ночи - приехали быстро, оформили всё по страховке, довезли домой. Спасибо за профессионализм!"</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <div class="review-avatar">В</div>
+                        <div class="review-info">
+                            <h4>Владимир С.</h4>
+                            <div class="stars">★★★★★</div>
+                        </div>
+                    </div>
+                    <p>"Нужно было перевезти купленную машину из салона. Приехали вовремя, аккуратно погрузили, фото до и после. Довольны сервисом, рекомендую!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fleet -->
+    <section class="fleet">
+        <div class="container">
+            <h2>Наш парк техники</h2>
+            <div class="fleet-grid">
+                <div class="fleet-item">
+                    <div class="fleet-image">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Гидравлическая платформа</h3>
+                    <p>Для легковых автомобилей и кроссоверов до 2,5 тонн</p>
+                </div>
+                <div class="fleet-item">
+                    <div class="fleet-image">
+                        <i class="fas fa-truck-pickup"></i>
+                    </div>
+                    <h3>Кран-манипулятор</h3>
+                    <p>Для внедорожников и коммерческого транспорта до 3,5 тонн</p>
+                </div>
+                <div class="fleet-item">
+                    <div class="fleet-image">
+                        <i class="fas fa-motorcycle"></i>
+                    </div>
+                    <h3>Для мотоциклов</h3>
+                    <p>Специализированная платформа для мототехники</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <h2>Часто задаваемые вопросы</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Сколько стоит эвакуация в Москве?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Стоимость эвакуации зависит от типа автомобиля и расстояния. Базовая цена: легковой автомобиль - 2000₽, кроссовер - 2500₽, микроавтобус - 3000₽. За каждый километр доплачиваете 50₽. Никаких скрытых доплат!</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Как быстро приедет эвакуатор?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Гарантируем прибытие эвакуатора в течение 30 минут в пределах МКАД. Для Московской области время может составлять 45-60 минут в зависимости от удаленности.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Какие способы оплаты принимаете?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Принимаем наличные, банковские карты, переводы. Выдаем фискальный чек. Оплата производится после выполнения услуги.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Есть ли страховка автомобиля?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Да, все автомобили застрахованы на сумму до 5 млн рублей. Перед погрузкой делаем фото состояния авто, после доставки - контрольные фото.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Map -->
+    <section class="coverage">
+        <div class="container">
+            <h2>Зона покрытия</h2>
+            <div class="coverage-content">
+                <div class="coverage-map">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <p>Москва и Московская область</p>
+                    </div>
+                </div>
+                <div class="coverage-info">
+                    <h3>Работаем по всей Москве и МО</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> В пределах МКАД - 30 минут</li>
+                        <li><i class="fas fa-check"></i> До 30 км от МКАД - 45 минут</li>
+                        <li><i class="fas fa-check"></i> До 60 км от МКАД - 60 минут</li>
+                        <li><i class="fas fa-check"></i> Трассы М-1, М-4, М-7, М-8, М-9, М-11</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Сломались? Позвоните сейчас!</h2>
+                <p>Наш эвакуатор приедет в течение <span class="highlight-time">30 минут</span></p>
+                <div class="cta-buttons-bottom">
+                    <a href="tel:+79772957171" class="btn btn-primary btn-large">
+                        <i class="fas fa-phone"></i>
+                        +7 (977) 295-71-71
+                    </a>
+                    <button class="btn btn-secondary btn-large" onclick="openCallbackModal()">
+                        <i class="fas fa-callback"></i>
+                        Перезвонить мне
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ЭвакуаторПро</h3>
+                    <p>Быстрая и надежная эвакуация автомобилей в Москве и Московской области</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-phone"></i> +7 (977) 295-71-71</p>
+                    <p><i class="fas fa-envelope"></i> Gev041@mail.ru</p>
+                    <p><i class="fas fa-clock"></i> 24/7 без выходных</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Услуги</h4>
+                    <ul>
+                        <li>Эвакуация легковых авто</li>
+                        <li>Эвакуация мотоциклов</li>
+                        <li>Эвакуация микроавтобусов</li>
+                        <li>Помощь на дороге</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Информация</h4>
+                    <ul>
+                        <li><a href="#prices">Цены</a></li>
+                        <li><a href="#fleet">Парк техники</a></li>
+                        <li><a href="#contacts">Контакты</a></li>
+                        <li><a href="#privacy">Политика конфиденциальности</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ЭвакуаторПро. Все права защищены. ИНН: 1234567890</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Callback Modal -->
+    <div id="callbackModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCallbackModal()">&times;</span>
+            <h3>Заказать обратный звонок</h3>
+            <p>Оставьте номер телефона и мы перезвоним в течение 30 секунд</p>
+            <form id="callbackForm">
+                <input type="text" id="clientName" placeholder="Ваше имя" required>
+                <input type="tel" id="clientPhone" placeholder="+7 (___) ___-__-__" required>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    ПЕРЕЗВОНИТЬ МНЕ
+                </button>
+            </form>
+            <div class="callback-timer-container">
+                <div class="callback-timer-idle">
+                    <div class="timer-slider">
+                        <div class="timer-slider-track">
+                            <div class="timer-slider-progress"></div>
+                        </div>
+                        <span class="timer-text">Перезвоним через 30 сек</span>
+                    </div>
+                </div>
+                <div class="callback-timer-active" style="display: none;">
+                    <div class="callback-success-message">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Отлично, перезвоним вам через:</span>
+                    </div>
+                    <div class="callback-countdown-display">
+                        <span id="callbackCountdown">30</span> сек
+                    </div>
+                </div>
+                <div class="callback-timer-finished" style="display: none;">
+                    <div class="callback-queue-message">
+                        <i class="fas fa-clock"></i>
+                        <span>Извините, видимо большая очередь, скоро обязательно вам перезвоним!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sticky Call Button -->
+    <div class="sticky-call-btn">
+        <a href="tel:+79772957171">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <div class="whatsapp-btn">
+        <a href="https://wa.me/79772957171" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
